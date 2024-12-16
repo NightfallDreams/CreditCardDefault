@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec 16 17:37:42 2024
 
-@author: ashis
+
+@author: NightfallDreams
 """
 
 import pandas as pd
@@ -23,7 +23,7 @@ st.markdown(
 
 
 
-with gzip.open("E:/Machine Learning/Models/CreditCard/CreditCardModel.pkl.gz", 'rb') as f:
+with gzip.open("CreditCardModel.pkl.gz", 'rb') as f:
     model = pickle.load(f)
 
 st.title("Predict Credit Card Default")
