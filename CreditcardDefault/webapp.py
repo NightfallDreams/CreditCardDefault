@@ -23,7 +23,7 @@ st.markdown(
 
 
 
-with gzip.open("CreditCardModel.pkl.gz", 'rb') as f:
+with gzip.open("CreditcardDefault/CreditCardModel.pkl.gz", 'rb') as f:
     model = pickle.load(f)
 
 st.title("Predict Credit Card Default")
