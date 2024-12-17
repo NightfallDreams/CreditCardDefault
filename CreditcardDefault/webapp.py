@@ -28,7 +28,7 @@ with gzip.open("CreditcardDefault/CreditCardModel.pkl.gz", 'rb') as f:
 
 st.title("What are the chances you will default on your next credit card payment ")
 st.write("Enter the following details")
-limit_bal=st.number_input('Enter your cards Limit',min_value=1000,max_value=1000000)
+limit_bal=st.number_input('Enter your Credit Card Limit',min_value=1000,max_value=1000000)
 Sex=st.selectbox('Gender',options=['Male','Female'])
 EDUCATION = st.selectbox('Education Level', options=['Graduate School', 'University', 'High School', 'Other', 'Unknown'])
 MARRIAGE = st.selectbox('Marital Status', options=['Married', 'Single', 'Other'])
