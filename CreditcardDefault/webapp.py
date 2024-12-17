@@ -26,7 +26,7 @@ st.markdown(
 with gzip.open("CreditcardDefault/CreditCardModel.pkl.gz", 'rb') as f:
     model = pickle.load(f)
 
-st.title("What are the chances you will default on your next credit card payment ")
+st.title("What are the chances you will default on your next credit card payment? ")
 st.write("Enter the following details")
 limit_bal=st.number_input('Enter your Credit Card Limit',min_value=1000,max_value=1000000)
 Sex=st.selectbox('Gender',options=['Male','Female'])
