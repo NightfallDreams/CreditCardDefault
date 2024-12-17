@@ -26,7 +26,7 @@ st.markdown(
 with gzip.open("CreditcardDefault/CreditCardModel.pkl.gz", 'rb') as f:
     model = pickle.load(f)
 
-st.title("Predict Credit Card Default")
+st.title("What are the chances you will default on your next credit card payment ")
 st.write("Enter the following details")
 limit_bal=st.number_input('Enter your cards Limit',min_value=1000,max_value=1000000)
 Sex=st.selectbox('Gender',options=['Male','Female'])
@@ -35,31 +35,31 @@ MARRIAGE = st.selectbox('Marital Status', options=['Married', 'Single', 'Other']
 AGE = st.number_input('Age (in years)', min_value=18, max_value=100)
 
 st.write("Repayment Status based on past 6 months :")
-BILL_AMT1 = st.number_input('Bill Amount in September 2005', min_value=0)
-PAY_AMT1 = st.number_input('Payment Amount in September 2005', min_value=0)
-PAY_0 = st.selectbox('Repayment Status in September 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+BILL_AMT1 = st.number_input('Bill Amount for last month ', min_value=0)
+PAY_AMT1 = st.number_input('Payment amount for last month',min_value=0 )
+PAY_0 = st.selectbox('Repayment Status for last month ', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
 
-BILL_AMT2 = st.number_input('Bill Amount in August 2005', min_value=0)
-PAY_AMT2 = st.number_input('Payment Amount in August 2005', min_value=0)
-PAY_2 = st.selectbox('Repayment Status in August 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+BILL_AMT2 = st.number_input('Bill Amount 2 months prior ', min_value=0)
+PAY_AMT2 = st.number_input('Payment Amount 2 months prior ', min_value=0)
+PAY_2 = st.selectbox('Repayment Status 2 months prior ', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
 
-BILL_AMT3 = st.number_input('Bill Amount in July 2005', min_value=0)
-PAY_AMT3 = st.number_input('Payment Amount in July 2005', min_value=0)
-PAY_3 = st.selectbox('Repayment Status in July 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
-
-
-BILL_AMT4 = st.number_input('Bill Amount in June 2005', min_value=0)
-PAY_AMT4 = st.number_input('Payment Amount in June 2005', min_value=0)
-PAY_4 = st.selectbox('Repayment Status in June 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+BILL_AMT3 = st.number_input('Bill Amount 3 months prior ', min_value=0)
+PAY_AMT3 = st.number_input('Payment Amount 3 months prior ', min_value=0)
+PAY_3 = st.selectbox('Repayment Status 3 months prior ', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
 
 
-BILL_AMT5 = st.number_input('Bill Amount in May 2005', min_value=0)
-PAY_AMT5 = st.number_input('Payment Amount in May 2005', min_value=0)
-PAY_5 = st.selectbox('Repayment Status in May 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+BILL_AMT4 = st.number_input('Bill Amount 4 months prior', min_value=0)
+PAY_AMT4 = st.number_input('Payment Amount 4 months prior' , min_value=0)
+PAY_4 = st.selectbox('Repayment Status 4 months prior ', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
 
-BILL_AMT6 = st.number_input('Bill Amount in April 2005', min_value=0)
-PAY_AMT6 = st.number_input('Payment Amount in April 2005', min_value=0)
-PAY_6 = st.selectbox('Repayment Status in April 2005', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+
+BILL_AMT5 = st.number_input('Bill Amount 5 months prior ', min_value=0)
+PAY_AMT5 = st.number_input('Payment Amount 5 months prior ', min_value=0)
+PAY_5 = st.selectbox('Repayment Status 5 months prior ', options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
+
+BILL_AMT6 = st.number_input('Bill Amount 6 months prior ', min_value=0)
+PAY_AMT6 = st.number_input('Payment Amount  6 months prior ', min_value=0)
+PAY_6 = st.selectbox('Repayment Status 6 months prior' , options=['Pay duly', 'Payment delay 1 month', 'Payment delay 2 months', 'Payment delay 3 months', 'Payment delay 4 months', 'Payment delay 5 months', 'Payment delay 6 months', 'Payment delay 7 months', 'Payment delay 8 months', 'Payment delay 9 months or more'])
 
 
 def convert_gender(Sex):
@@ -70,7 +70,7 @@ def convert_education(EDUCATION):
     return mapping.get(EDUCATION,5)
 
 def convert_marraige(MARRIAGE):
-    mapping={'Married ':1,'Single':2,'Other':3}
+    mapping={'Married':1,'Single':2,'Other':3}
     return mapping.get(MARRIAGE,3)
 
 def convert_repayment_status(status):
