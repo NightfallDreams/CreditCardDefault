@@ -112,7 +112,7 @@ if st.button('Predict'):
     st.write("Making prediction...")
     prediction = model.predict(input_df)
     prediction = int(prediction[0])
-    st.write(f"Prediction: {prediction}")
+    
     
     if prediction == 0:
         st.success("The Customer is likely to pay the next Installment")
